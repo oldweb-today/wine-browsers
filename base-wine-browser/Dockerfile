@@ -19,6 +19,11 @@ RUN mkdir -p /usr/share/wine/mono \
     && curl -SL 'http://sourceforge.net/projects/wine/files/Wine%20Mono/$WINE_MONO_VERSION/wine-mono-$WINE_MONO_VERSION.msi/download' -o /usr/share/wine/mono/wine-mono-$WINE_MONO_VERSION.msi \
     && chmod +x /usr/share/wine/mono/wine-mono-$WINE_MONO_VERSION.msi
 
+# Put gecko installer into wine directory for wine 1.6
+RUN mkdir -p /usr/share/wine/gecko
+COPY wine_gecko-2.21-x86.msi /usr/share/wine/gecko/
+RUN chmod a+rx /usr/share/wine/gecko/wine_gecko-2.21-x86.msi
+
 # Wine really doesn't like to be run as root, so let's use a non-root user
 USER browser
 ENV HOME /home/browser
