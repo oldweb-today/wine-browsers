@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export WINEDLLOVERRIDES="mshtml="
 export WINEPREFIX="/home/browser/.wine"
 
 USER_REG=/home/browser/custom_user.reg
