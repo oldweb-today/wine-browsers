@@ -1,1 +1,1 @@
-*.tar filter=lfs diff=lfs merge=lfs -binary
+*.tar.gz filter=lfs diff=lfs merge=lfs -binary
