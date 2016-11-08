@@ -3,10 +3,11 @@ FROM webrecorder/base-wine-browser
 USER browser
 WORKDIR /home/browser
 
-ADD ns48.tar.gz /home/browser/
+ADD wine.tar.gz /home/browser/
 
 COPY prefs.js /home/browser/prefs.js
 COPY proxy_prefs.js /home/browser/proxy_prefs.js
+COPY custom_user.reg /home/browser/custom_user.reg
 
 COPY run.sh /app/run.sh
 RUN sudo chmod a+x /app/run.sh

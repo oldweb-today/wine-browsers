@@ -1,9 +1,11 @@
 #!/bin/bash
 
 export WINEDLLOVERRIDES="mshtml="
-export WINEPREFIX="/home/browser/ns48"
+export WINEPREFIX="/home/browser/.wine"
 
-sed -i s/DIMENSION/$SCREEN_WIDTH"x"$SCREEN_HEIGHT/g $WINEPREFIX/user.reg
+USER_REG=/home/browser/custom_user.reg
+
+sed -i s/'$DIMENSION'/$SCREEN_WIDTH"x"$SCREEN_HEIGHT/g $USER_REG
 
 sudo chown browser /home/browser/prefs.js
 echo "user_pref(\"browser.window_rect\", \"0,0,$SCREEN_WIDTH,$SCREEN_HEIGHT\");" >> /home/browser/prefs.js
@@ -15,8 +17,9 @@ if [[ -n "$PROXY_HOST" ]]; then
     cat /home/browser/proxy_prefs.js >> /home/browser/prefs.js
 fi
 
-cp /home/browser/prefs.js $WINEPREFIX/drive_c/Program\ Files/Netscape/Users/default/prefs.js
+cp /home/browser/prefs.js $WINEPREFIX/drive_c/Program\ Files/Netscape/Users/webrecorder/prefs.js
 
+wine regedit $USER_REG
 
 run_browser wine 'C:/Program Files/Netscape/Communicator/Program/netscape.exe' $URL
 
