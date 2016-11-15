@@ -3,8 +3,11 @@ FROM webrecorder/base-browser
 # Install wine and related packages
 RUN dpkg --add-architecture i386 \
         && apt-get update \
+        && apt-get install -y --no-install-recommends software-properties-common \
+        && add-apt-repository ppa:ubuntu-wine/ppa \
+        && apt-get update \
         && apt-get install -y --no-install-recommends \
-                wine pulseaudio:i386 \
+                wine1.8 winetricks pulseaudio:i386 \
         && rm -rf /var/lib/apt/lists/*
 
 # Use the latest version of winetricks
