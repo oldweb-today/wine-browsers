@@ -1,0 +1,5 @@
+Regedit4
+
+[HKEY_CURRENT_USER\Software\Wine\Explorer\Desktops]
+"Default"="$DIMENSION"
+
