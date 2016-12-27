@@ -1,4 +1,4 @@
-FROM webrecorder/base-browser
+FROM oldwebtoday/base-browser
 
 # Install wine and related packages
 RUN dpkg --add-architecture i386 \
