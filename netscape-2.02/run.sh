@@ -18,4 +18,4 @@ fi
 
 wine regedit $USER_REG
 
-run_browser wine $WINEPREFIX/drive_c/Program\ Files/Netscape/Navigator/Program/netscape.exe "$URL"
+run_browser wine $WINEPREFIX/drive_c/Program\ Files/Netscape/Navigator/Program/netscape.exe "$URL" & sleep 2s && xdotool mousemove 10 20 click 1 && xdotool mousemove 10 30 click 1
