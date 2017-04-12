@@ -5,9 +5,6 @@ WORKDIR /home/browser
 
 ADD wine.tar.gz /home/browser/
 
-RUN sudo apt-get update
-RUN sudo apt-get install -y xdotool
-
 RUN mkdir fontconfig
 COPY fonts.conf /home/browser/fontconfig/
 
