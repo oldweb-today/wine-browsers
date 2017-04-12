@@ -4,7 +4,7 @@ Regedit4
 "Bottom"=dword:$SCREEN_HEIGHT
 "Left"=dword:00000000
 "Right"=dword:$SCREEN_WIDTH
-"Show"=dword:00000003
+"Show"=dword:00000001
 "Top"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Netscape\Netscape Navigator\Proxy Information]
