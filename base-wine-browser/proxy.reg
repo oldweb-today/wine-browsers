@@ -4,5 +4,5 @@ Regedit4
 "MigrateProxy"=dword:00000001
 "ProxyEnable"=dword:00000001
 "ProxyHttp1.1"=dword:00000000
-"ProxyServer"="netcapsule_pywb_1:8080"
+"ProxyServer"="$PROXY_HOST:$PROXY_PORT"
 "ProxyOverride"="<local>"
