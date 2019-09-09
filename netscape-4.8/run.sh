@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export WINEDLLOVERRIDES="mshtml="
+export WINEDLLOVERRIDES="mshtml= mscoree="
 export WINEPREFIX="/home/browser/.wine"
 
 USER_REG=/home/browser/custom_user.reg
@@ -21,5 +21,5 @@ cp /home/browser/prefs.js $WINEPREFIX/drive_c/Program\ Files/Netscape/Users/webr
 
 wine regedit $USER_REG
 
-run_browser wine 'C:/Program Files/Netscape/Communicator/Program/netscape.exe' $URL
+run_forever wine 'C:/Program Files/Netscape/Communicator/Program/netscape.exe' $URL
 

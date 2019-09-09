@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+   ie_4:
+      image: 'oldwebtoday/ie:4'
+      build:
+        context: .
+        args:
+            VERSION: "4.0"
+            WINE_DIR: ie4.tar.gz
+
+        labels:
+            "wr.version": "4.0"
+            "wr.release": "2016-09-23"
+            "wr.caps.flash": "1"
+            "wr.caps.java": "1"
+ 
+   ie_5_5:
+      image: 'oldwebtoday/ie:5.5'
+      build:
+        context: .
+        args:
+            VERSION: "5.5"
+            WINE_DIR: ie5.5.tar.gz
+
+        labels:
+            "wr.version": "5.5"
+
+

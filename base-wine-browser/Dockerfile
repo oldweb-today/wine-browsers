@@ -1,4 +1,6 @@
-FROM oldwebtoday/base-browser
+FROM oldwebtoday/base-browser:xenial
+
+USER root
 
 # Install wine and related packages
 RUN dpkg --add-architecture i386 \
@@ -38,6 +40,4 @@ WORKDIR /home/browser
 COPY proxy.reg /home/browser/proxy.reg
 
 COPY run.sh /app/run.sh
-
-CMD /app/entry_point.sh /app/run.sh
 
